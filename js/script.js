@@ -65,11 +65,31 @@ const card = document.querySelector('.row');
 //creo la colonna
 let myCol = document.createElement('div');
 myCol.className = 'col-4 card';
+
 //creo l'immagine
 let userImg = document.createElement('img');
 userImg.className = 'card-img-top';
 userImg.src = '...';
 userImg.alt = '...';
+
+//creo la card body
+let cardBody = document.createElement('div');
+cardBody.className = 'card-body';
+//creo il titolo della card con dentro il nome dell'utente
+let titleName = document.createElement('h5')
+titleName.className = 'card-title';
+titleName.textContent = 'Nome e cognome'
+//creo la card text
+let cardText = document.createElement('p');
+cardText.className = 'card-text';
+cardText.textContent = 'Role'
+//collego la col alla row
+card.append(myCol);
+
+myCol.append(userImg, cardBody)
+
+cardBody.append(titleName, cardText)
+console.log(card);
 
 
 

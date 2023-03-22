@@ -62,7 +62,7 @@ const myteam = [
 
 const card = document.querySelector('.row');
 
-function createCards() {
+function createCards(srcImg,altImg,name, surname,role ) {
 
     //creo la colonna
     let myCol = document.createElement('div');
@@ -71,8 +71,8 @@ function createCards() {
     //creo l'immagine
     let userImg = document.createElement('img');
     userImg.className = 'card-img-top';
-    userImg.src = '...';
-    userImg.alt = '...';
+    userImg.src = `./img/`+ srcImg;
+    userImg.alt = altImg;
 
     //creo la card body
     let cardBody = document.createElement('div');
@@ -80,11 +80,11 @@ function createCards() {
     //creo il titolo della card con dentro il nome dell'utente
     let titleName = document.createElement('h5')
     titleName.className = 'card-title';
-    titleName.textContent = 'Nome e cognome'
+    titleName.textContent = name  + ' ' + surname;
     //creo la card text
     let cardText = document.createElement('p');
     cardText.className = 'card-text';
-    cardText.textContent = 'Role'
+    cardText.textContent = role;
     //collego la col alla row
     card.append(myCol);
 
@@ -105,7 +105,8 @@ for (let i = 0; i < myteam.length; i++) {
     console.log(myteam[i].role);
     console.log(myteam[i].image);
 
-
+    const member = myteam[i];    
+    createCards(member.image, member.surname, member.name, member.surname, member.role)
 
     //titleName.textContent = myteam[i].name;
     //titleName.textContent += myteam[i].surname;

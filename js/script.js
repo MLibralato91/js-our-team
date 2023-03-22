@@ -60,4 +60,12 @@ const myteam = [
     }
 ]
 
-console.log();
+
+
+for (let i = 0; i < myteam.length; i++) {
+    console.log(myteam[i].name);
+    console.log(myteam[i].surname);
+    console.log(myteam[i].role);
+    console.log(myteam[i].image);
+    
+}

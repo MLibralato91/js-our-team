@@ -24,37 +24,37 @@ Organizzare i singoli membri in card/schede
 const myteam = [
     {
         name: 'Wayne',
-        surname : 'Barnett',
+        surname: 'Barnett',
         role: 'Founder & CEO',
         image: 'wayne-barnett-founder-ceo.jpg'
     },
     {
         name: 'Angela',
-        surname : 'Caroll',
+        surname: 'Caroll',
         role: 'Founder & CEOChief Editor',
         image: 'angela-caroll-chief-editor.jpg'
     },
     {
         name: 'Walter',
-        surname : 'Gordon',
+        surname: 'Gordon',
         role: 'Office Manager',
         image: 'walter-gordon-office-manager.jpg'
     },
     {
         name: 'Angela',
-        surname : 'Lopez',
+        surname: 'Lopez',
         role: 'Social Media Manager',
         image: 'angela-lopez-social-media-manager.jpg'
     },
     {
         name: 'Scott',
-        surname : 'Estrada',
+        surname: 'Estrada',
         role: 'Developer',
         image: 'scott-estrada-developer.jpg'
     },
     {
         name: 'Barbara',
-        surname : 'Ramos',
+        surname: 'Ramos',
         role: 'Graphic Designer',
         image: 'barbara-ramos-graphic-designer.jpg'
     }
@@ -62,34 +62,38 @@ const myteam = [
 
 const card = document.querySelector('.row');
 
-//creo la colonna
-let myCol = document.createElement('div');
-myCol.className = 'col-4 card';
+function createCards() {
 
-//creo l'immagine
-let userImg = document.createElement('img');
-userImg.className = 'card-img-top';
-userImg.src = '...';
-userImg.alt = '...';
+    //creo la colonna
+    let myCol = document.createElement('div');
+    myCol.className = 'col-4 card';
 
-//creo la card body
-let cardBody = document.createElement('div');
-cardBody.className = 'card-body';
-//creo il titolo della card con dentro il nome dell'utente
-let titleName = document.createElement('h5')
-titleName.className = 'card-title';
-titleName.textContent = 'Nome e cognome'
-//creo la card text
-let cardText = document.createElement('p');
-cardText.className = 'card-text';
-cardText.textContent = 'Role'
-//collego la col alla row
-card.append(myCol);
+    //creo l'immagine
+    let userImg = document.createElement('img');
+    userImg.className = 'card-img-top';
+    userImg.src = '...';
+    userImg.alt = '...';
 
-myCol.append(userImg, cardBody)
+    //creo la card body
+    let cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+    //creo il titolo della card con dentro il nome dell'utente
+    let titleName = document.createElement('h5')
+    titleName.className = 'card-title';
+    titleName.textContent = 'Nome e cognome'
+    //creo la card text
+    let cardText = document.createElement('p');
+    cardText.className = 'card-text';
+    cardText.textContent = 'Role'
+    //collego la col alla row
+    card.append(myCol);
 
-cardBody.append(titleName, cardText)
-console.log(card);
+    myCol.append(userImg, cardBody)
+
+    cardBody.append(titleName, cardText)
+    console.log(card);
+}
+
 
 
 
@@ -100,10 +104,13 @@ for (let i = 0; i < myteam.length; i++) {
     console.log(myteam[i].surname);
     console.log(myteam[i].role);
     console.log(myteam[i].image);
-    //card.textContent += myteam[i].name;
-    //card.textContent += myteam[i].surname;
-    //card.textContent += myteam[i].role;
-    //card.textContent += myteam[i].image;
-    
+
+
+
+    //titleName.textContent = myteam[i].name;
+    //titleName.textContent += myteam[i].surname;
+    //cardText.textContent += myteam[i].role;
+    //cardText.textContent += myteam[i].image;
+
 }
 console.log(card);

@@ -60,6 +60,19 @@ const myteam = [
     }
 ]
 
+const card = document.querySelector('.row');
+
+//creo la colonna
+let myCol = document.createElement('div');
+myCol.className = 'col-4 card';
+//creo l'immagine
+let userImg = document.createElement('img');
+userImg.className = 'card-img-top';
+userImg.src = '...';
+userImg.alt = '...';
+
+
+
 
 
 for (let i = 0; i < myteam.length; i++) {
@@ -67,5 +80,10 @@ for (let i = 0; i < myteam.length; i++) {
     console.log(myteam[i].surname);
     console.log(myteam[i].role);
     console.log(myteam[i].image);
+    //card.textContent += myteam[i].name;
+    //card.textContent += myteam[i].surname;
+    //card.textContent += myteam[i].role;
+    //card.textContent += myteam[i].image;
     
 }
+console.log(card);

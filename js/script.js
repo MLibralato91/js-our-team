@@ -62,7 +62,7 @@ const myteam = [
 
 const card = document.querySelector('.row');
 
-function createCards(srcImg,altImg,name, surname,role ) {
+function createCards(obj) {
 
     //creo la colonna
     let myCol = document.createElement('div');
@@ -71,8 +71,8 @@ function createCards(srcImg,altImg,name, surname,role ) {
     //creo l'immagine
     let userImg = document.createElement('img');
     userImg.className = 'card-img-top';
-    userImg.src = `./img/`+ srcImg;
-    userImg.alt = altImg;
+    userImg.src = `./img/` + obj.image;
+    userImg.alt = obj.name;
 
     //creo la card body
     let cardBody = document.createElement('div');
@@ -80,11 +80,11 @@ function createCards(srcImg,altImg,name, surname,role ) {
     //creo il titolo della card con dentro il nome dell'utente
     let titleName = document.createElement('h5')
     titleName.className = 'card-title';
-    titleName.textContent = name  + ' ' + surname;
+    titleName.textContent = obj.name + ' ' + obj.surname;
     //creo la card text
     let cardText = document.createElement('p');
     cardText.className = 'card-text';
-    cardText.textContent = role;
+    cardText.textContent = obj.role;
     //collego la col alla row
     card.append(myCol);
 
@@ -99,19 +99,33 @@ function createCards(srcImg,altImg,name, surname,role ) {
 
 
 
-for (let i = 0; i < myteam.length; i++) {
-    console.log(myteam[i].name);
-    console.log(myteam[i].surname);
-    console.log(myteam[i].role);
-    console.log(myteam[i].image);
+// for (let i = 0; i < myteam.length; i++) {
+//     console.log(myteam[i].name);
+//     console.log(myteam[i].surname);
+//     console.log(myteam[i].role);
+//     console.log(myteam[i].image);
 
-    const member = myteam[i];    
-    createCards(member.image, member.surname, member.name, member.surname, member.role)
+//     const member = myteam[i];
+//     createCards(member.image, member.surname, member.name, member.surname, member.role)
 
-    //titleName.textContent = myteam[i].name;
-    //titleName.textContent += myteam[i].surname;
-    //cardText.textContent += myteam[i].role;
-    //cardText.textContent += myteam[i].image;
+//     //titleName.textContent = myteam[i].name;
+//     //titleName.textContent += myteam[i].surname;
+//     //cardText.textContent += myteam[i].role;
+//     //cardText.textContent += myteam[i].image;
 
-}
+// }
 console.log(card);
+
+const filteredArray = myteam.filter((element) => {
+    if(element.role === 'Founder & CEO'){
+        return true;
+    }else{
+        return false
+    }
+});
+
+console.log(filteredArray);
+
+filteredArray.forEach((element) => {
+    createCards(element)
+})

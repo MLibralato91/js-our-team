@@ -98,34 +98,32 @@ function createCards(obj) {
 
 
 
+for (let i = 0; i < myteam.length; i++) {
+    console.log(myteam[i].name);
+    console.log(myteam[i].surname); console.log(myteam[i].role);
+    console.log(myteam[i].image);
 
-// for (let i = 0; i < myteam.length; i++) {
-//     console.log(myteam[i].name);
-//     console.log(myteam[i].surname);
-//     console.log(myteam[i].role);
-//     console.log(myteam[i].image);
+    const member = myteam[i];
+    createCards(member);
 
-//     const member = myteam[i];
-//     createCards(member.image, member.surname, member.name, member.surname, member.role)
+    //titleName.textContent = myteam[i].name;
+    //titleName.textContent += myteam[i].surname;
+    //cardText.textContent += myteam[i].role;
+    //cardText.textContent += myteam[i].image;
 
-//     //titleName.textContent = myteam[i].name;
-//     //titleName.textContent += myteam[i].surname;
-//     //cardText.textContent += myteam[i].role;
-//     //cardText.textContent += myteam[i].image;
+}
+// console.log(card);
 
-// }
-console.log(card);
+// const filteredArray = myteam.filter((element) => {
+//     if(element.role === 'Founder & CEO'){
+//         return true;
+//     }else{
+//         return false
+//     }
+// });
 
-const filteredArray = myteam.filter((element) => {
-    if(element.role === 'Founder & CEO'){
-        return true;
-    }else{
-        return false
-    }
-});
+// console.log(filteredArray);
 
-console.log(filteredArray);
-
-filteredArray.forEach((element) => {
-    createCards(element)
-})
+// filteredArray.forEach((element) => {
+//     createCards(element)
+// })
